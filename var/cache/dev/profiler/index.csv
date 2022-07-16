@@ -8,3 +8,6 @@ fb4118,::1,GET,http://localhost:8000/favicon.ico,1657896779,,404
 aece0f,::1,GET,http://localhost:8000/,1657967099,,200
 0d4fb3,::1,GET,http://localhost:8000/,1657967170,,200
 5ee34a,::1,GET,http://localhost:8000/,1657968162,,200
+a98b71,::1,GET,http://localhost:8000/,1657974827,,200
+0c1dec,::1,GET,http://localhost:8000/post/test,1657974853,,200
+35de8d,::1,GET,http://localhost:8000/post/sfdfsdf,1657974858,,200
