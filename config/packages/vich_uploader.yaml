@@ -1,0 +1,13 @@
+vich_uploader:
+    db_driver: orm
+    metadata:
+        type: attribute
+    mappings:
+        document_storage:
+            uri_prefix: /images/document_storage
+            upload_destination: '%kernel.project_dir%/public/images/document_storage'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+
+            inject_on_load: false
+            delete_on_update: true
+            delete_on_remove: true

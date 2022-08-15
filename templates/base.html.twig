@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Lkanko">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link href="{{ asset('assets/plugins/switchery/switchery.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/select2/select2.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput-typeahead.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/pnotify/css/pnotify.custom.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/datepicker/datepicker.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/flag-icon.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="infobar-settings-sidebar-overlay"></div>
+
+<div id="containerbar">
+    <div class="leftbar">
+        <div class="sidebar">
+            <div class="logobar">
+                <a href="{{ path('app_document_index') }}" class="logo logo-large"><img src="{{ asset('assets/images/logo.svg') }}"
+                                                                              class="img-fluid" alt="logo"></a>
+                <a href="{{ path('app_document_index') }}" class="logo logo-small"><img
+                            src="{{ asset('assets/images/small_logo.svg') }}" class="img-fluid" alt="logo"></a>
+            </div>
+
+            <div class="navigationbar">
+                <ul class="vertical-menu">
+                    <li>
+                        <a href="{{ path('app_document_index') }}">
+                            <i class="ri-dashboard-line"></i><span>{% trans %}Dashboard{% endtrans %}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javaScript:void();">
+                            <i class="ri-user-settings-line"></i><span>{% trans %}Manage{% endtrans %}</span><i class="ri-arrow-right-s-line"></i>
+                        </a>
+                        <ul class="vertical-submenu">
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li><a href="{{ path('app_user_index') }}">{% trans %}ManageUser{% endtrans %}</a></li>
+                            {% endif %}
+                            <li><a href="{{ path('app_document_index') }}">{% trans %}ManageDocument{% endtrans %}</a></li>
+                            <li><a href="{{ path('app_edit_pass', {'id' : app.user.id}) }}">{% trans %}EditPass{% endtrans %}</a></li>
+                            <li><a href="{{ path('app_logout') }}">{% trans %}Logout{% endtrans %}</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="rightbar">
+
+        <div class="topbar-mobile">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="mobile-logobar">
+                        <a href="{{ path('app_document_index') }}" class="mobile-logo"><img
+                                    src="{{ asset('assets/images/logo.svg') }}" class="img-fluid" alt="logo"></a>
+                    </div>
+                    <div class="mobile-togglebar">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <div class="topbar-toggle-icon">
+                                    <a class="topbar-toggle-hamburger" href="javascript:void();">
+                                            <span class="iconbar">
+                                                <i class="ri-more-fill menu-hamburger-horizontal"></i>
+                                                <i class="ri-more-2-fill menu-hamburger-vertical"></i>
+                                            </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li class="list-inline-item">
+                                <div class="menubar">
+                                    <a class="menu-hamburger" href="javascript:void();">
+                                            <span class="iconbar">
+                                                <i class="ri-menu-2-line menu-hamburger-collapse"></i>
+                                                <i class="ri-close-line menu-hamburger-close"></i>
+                                            </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="topbar">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-12 align-self-center">
+                    <div class="togglebar">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <div class="menubar">
+                                    <a class="menu-hamburger" href="javascript:void();">
+                                            <span class="iconbar">
+                                                <i class="ri-menu-2-line menu-hamburger-collapse"></i><i
+                                                        class="ri-close-line menu-hamburger-close"></i>
+                                            </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="infobar">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item">
+                                <div class="profilebar">
+                                    <div class="dropdown">
+
+                                        <a class="dropdown-toggle" href="#" role="button" id="profilelink"
+                                           data-toggle="dropdown" aria-haspopup="true"
+                                           aria-expanded="false">{% if is_granted('IS_AUTHENTICATED_FULLY') %}<img
+                                                src="{{ asset('assets/images/users/profile.svg') }}"
+                                                class="img-fluid" alt="profile" ><span
+                                                        class="live-icon">{{ app.user.userIdentifier }}</span>{% endif %}</a>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profilelink">
+
+                                            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                                                <a class="dropdown-item"
+                                                   href="{{ path('app_edit_pass', {'id': app.user.id}) }}"><i
+                                                            class="ft-user-check"></i>{% trans %}ChangePassword{% endtrans %}
+                                                </a>
+                                                <a class="dropdown-item" href="{{ path('app_logout') }}"><i
+                                                            class="ri-shut-down-line"></i>{% trans %}Logout{% endtrans %}
+                                                </a>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% block body %}{% endblock %}
+        <div class="footerbar">
+            <footer class="footer">
+                <p class="mb-0">{% trans %}© 2022 All Rights Reserved.{% endtrans %}</p>
+            </footer>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/modernizr.min.js') }}"></script>
+<script src="{{ asset('assets/js/detect.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.slimscroll.js') }}"></script>
+<script src="{{ asset('assets/js/vertical-menu.js') }}"></script>
+<script src="{{ asset('assets/plugins/switchery/switchery.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/select2/select2.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.min.js') }}"></script>
+<script src="{{ asset('assets/js/custom/custom-form-select.js') }}"></script>
+<script src="{{ asset('assets/plugins/pnotify/js/pnotify.custom.min.js') }}"></script>
+<script src="{{ asset('assets/js/custom/custom-pnotify.js') }}"></script>
+<script src="{{ asset('assets/plugins/datepicker/datepicker.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datepicker/i18n/datepicker.en.js') }}"></script>
+<script src="{{ asset('assets/js/custom/custom-form-datepicker.js') }}"></script>
+{% block javascripts %}{% endblock %}
+<script src="{{ asset('assets/js/core.js') }}"></script>
+<script>
+    {% for message in app.flashes('success') %}
+    "use strict";
+    $(document).ready(function() {
+        new PNotify({
+            title: 'Information', text: '{{ message }}', type: 'success'
+        });
+    })
+    {% endfor %}
+
+    {% for message in app.flashes('danger') %}
+    "use strict";
+    $(document).ready(function() {
+        new PNotify({
+            title: 'Information', text: '{{ message }}', type: 'error'
+        });
+    })
+    {% endfor %}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}ListDocument{% endtrans %}{% endblock %}
+
+{% block body %}
+<div class="breadcrumbbar">
+    <div class="row align-items-center">
+        <div class="col-md-8 col-lg-8">
+            <h4 class="page-title">{% trans %}ListDocument{% endtrans %}</h4>
+            <div class="breadcrumb-list">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('app_document_index') }}">{% trans %}Home{% endtrans %}</a></li>
+                    <li class="breadcrumb-item"><a
+                                href="{{ path('app_document_index') }}">{% trans %}ManageDocument{% endtrans %}</a></li>
+                    <li class="breadcrumb-item active"><a href="#">{% trans %}ListDocument{% endtrans %}</a></li>
+                </ol>
+            </div>
+        </div>
+        <div class="col-md-4 col-lg-4">
+            <div class="widgetbar">
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="contentbar">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card m-b-30">
+                <div class="card-header">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-md-8">
+                            <a href="{{ path('app_document_new') }}" class="btn btn-primary"><i
+                                        class="ti-plus mr-2"></i>{% trans %}New{% endtrans %}</a>
+                        </div>
+                        <div class="input-group col-md-4 mb-3">
+                            {{ form_widget(form.recherche) }}
+                            <div class="input-group-append">
+                                <button class="btn btn-primary"><i class="ti-search mr-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-secondary">
+                            <thead>
+                            <tr>
+                                <th{% if documents.isSorted('p.titre') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(documents, 'Titre'|trans({},'messages')|raw, 'p.titre') }}</th>
+                                <th{% if documents.isSorted('p.taille') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(documents, 'Taille'|trans({},'messages')|raw, 'p.taille') }}</th>
+                                <th{% if documents.isSorted('p.extension') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(documents, 'Extension'|trans({},'messages')|raw, 'p.extension') }}</th>
+                                <th{% if documents.isSorted('p.updatedat') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(documents, 'UpdatedAt'|trans({},'messages')|raw, 'p.updatedAt') }}</th>
+                                <th> {% trans %}actions{% endtrans %} </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for document in documents %}
+                            <tr>
+                                <td>{{ document.titre }}</td>
+                                <td>{{ document.taille }}</td>
+                                <td>{{ document.extension }}</td>
+                                <td>{{ document.updatedAt ? document.updatedAt|ago : '' }}</td>
+                                <td class="form-inline">
+                                    <a class="btn btn-success btn-sm" href="{{ vich_uploader_asset(document) }}"><i class="ti-arrow-down mr-2"></i></a>
+                                    {% if is_granted('ROLE_ADMIN') or document.user.id == app.user.id %}
+                                        <a class="btn btn-info btn-sm" href="{{ path('app_document_show', {'id': document.id}) }}"><i class="ti-book mr-2"></i></a>
+                                        <a class="btn btn-warning btn-sm" href="{{ path('app_document_edit', {'id': document.id}) }}"><i class="ti-pencil mr-2"></i></a>
+                                        {{ include('document/_delete_form.html.twig') }}
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% else %}
+                            <tr>
+                                <td colspan="8"> {% trans %}NoRecordsFound{% endtrans %} </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                        <div class="navigation">
+                            {{ knp_pagination_render(documents) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

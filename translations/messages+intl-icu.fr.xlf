@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="UAsislX" resname="document.created">
+        <source>document.created</source>
+        <target>Document enregistrer</target>
+      </trans-unit>
+      <trans-unit id="LIpGbvt" resname="ducument.update">
+        <source>ducument.update</source>
+        <target>Document modifier</target>
+      </trans-unit>
+      <trans-unit id="JgpHzNJ" resname="ducument.delete">
+        <source>ducument.delete</source>
+        <target>Document supprimer</target>
+      </trans-unit>
+      <trans-unit id="7OwTFSb" resname="user.created">
+        <source>user.created</source>
+        <target>Utilisateur enregistrer</target>
+      </trans-unit>
+      <trans-unit id="HtAASms" resname="pass.good.change">
+        <source>pass.good.change</source>
+        <target>Mot de passe modifier</target>
+      </trans-unit>
+      <trans-unit id="uGQSjjG" resname="pass.not.correct">
+        <source>pass.not.correct</source>
+        <target>Mot de passe incorrecte</target>
+      </trans-unit>
+      <trans-unit id="bljhuxM" resname="user.update">
+        <source>user.update</source>
+        <target>Utilisateur modifier</target>
+      </trans-unit>
+      <trans-unit id="IvYqZUu" resname="user.delete">
+        <source>user.delete</source>
+        <target>Utilisateur supprimer</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="WiNESCj" resname="Manage">
+        <source>Manage</source>
+        <target>Menu</target>
+      </trans-unit>
+      <trans-unit id="c6jvszm" resname="ManageUser">
+        <source>ManageUser</source>
+        <target>Les utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="7kLcFU8" resname="ManageDocument">
+        <source>ManageDocument</source>
+        <target>Les documents</target>
+      </trans-unit>
+      <trans-unit id="I4rXjIi" resname="EditPass">
+        <source>EditPass</source>
+        <target>Modifier mot de passe</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Déconnexion</target>
+      </trans-unit>
+      <trans-unit id="5OMmW4h" resname="ChangePassword">
+        <source>ChangePassword</source>
+        <target>Changer de mot de passe</target>
+      </trans-unit>
+      <trans-unit id="ZoZzX8G" resname="© 2022 All Rights Reserved.">
+        <source>© 2022 All Rights Reserved.</source>
+        <target>© 2022 All Rights Reserved.</target>
+      </trans-unit>
+      <trans-unit id="JFYUWny" resname="UpdateDocument">
+        <source>UpdateDocument</source>
+        <target>Modifier un document</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Home</target>
+      </trans-unit>
+      <trans-unit id="Q8jIROL" resname="GoBack">
+        <source>GoBack</source>
+        <target>Retour</target>
+      </trans-unit>
+      <trans-unit id="wcEAnT8" resname="Update">
+        <source>Update</source>
+        <target>Modifier</target>
+      </trans-unit>
+      <trans-unit id="AxgQbwf" resname="ListDocument">
+        <source>ListDocument</source>
+        <target>Liste des documents</target>
+      </trans-unit>
+      <trans-unit id="GP3VSbL" resname="New">
+        <source>New</source>
+        <target>Nouveau</target>
+      </trans-unit>
+      <trans-unit id="eOeSABC" resname="Titre">
+        <source>Titre</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="dwk_DDP" resname="Taille">
+        <source>Taille</source>
+        <target>Taille</target>
+      </trans-unit>
+      <trans-unit id="OVrrlV4" resname="Extension">
+        <source>Extension</source>
+        <target>Extension</target>
+      </trans-unit>
+      <trans-unit id="IMIzC8T" resname="UpdatedAt">
+        <source>UpdatedAt</source>
+        <target>Dernière modification</target>
+      </trans-unit>
+      <trans-unit id="Kw3N1AA" resname="actions">
+        <source>actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="Vhu8pek" resname="NoRecordsFound">
+        <source>NoRecordsFound</source>
+        <target>Aucun élément trouver</target>
+      </trans-unit>
+      <trans-unit id="Xp1cdtF" resname="AddDocument">
+        <source>AddDocument</source>
+        <target>Enregistrer un document</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="IuR6fJL" resname="DetailDocument">
+        <source>DetailDocument</source>
+        <target>Détails du document</target>
+      </trans-unit>
+      <trans-unit id="EhVukhv" resname="Id">
+        <source>Id</source>
+        <target>Id</target>
+      </trans-unit>
+      <trans-unit id="ssEkU20" resname="Nom">
+        <source>Nom</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="_NU_9fk" resname="CreatedAt">
+        <source>CreatedAt</source>
+        <target>Date de création</target>
+      </trans-unit>
+      <trans-unit id="k_l2VTP" resname="LoginTitle">
+        <source>LoginTitle</source>
+        <target>Page de connexion</target>
+      </trans-unit>
+      <trans-unit id="nWMiwfT" resname="Login">
+        <source>Login</source>
+        <target>Page de connexion</target>
+      </trans-unit>
+      <trans-unit id="VJXIRY7" resname="YouAreLoggedInAs">
+        <source>YouAreLoggedInAs</source>
+        <target>Vous etes connecté en tant que : </target>
+      </trans-unit>
+      <trans-unit id="JcqeDbW" resname="RememberMe">
+        <source>RememberMe</source>
+        <target>Se souvenir de moi</target>
+      </trans-unit>
+      <trans-unit id="T6k5AC_" resname="LoginButton">
+        <source>LoginButton</source>
+        <target>Connexion</target>
+      </trans-unit>
+      <trans-unit id="mPZEyNN" resname="UpdateUser">
+        <source>UpdateUser</source>
+        <target>Modifier un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="gc9ogkW" resname="ListUser">
+        <source>ListUser</source>
+        <target>Liste des utilisateurs</target>
+      </trans-unit>
+      <trans-unit id="lpzL089" resname="Email">
+        <source>Email</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit id="wlM3BVR" resname="Roles">
+        <source>Roles</source>
+        <target>Roles</target>
+      </trans-unit>
+      <trans-unit id="t8_nMCO" resname="Prenom">
+        <source>Prenom</source>
+        <target>Prénom</target>
+      </trans-unit>
+      <trans-unit id="Y9zriAC" resname="Phone">
+        <source>Phone</source>
+        <target>Téléphone</target>
+      </trans-unit>
+      <trans-unit id="bw31ZJl" resname="AddUser">
+        <source>AddUser</source>
+        <target>Enregistrer un utilisateur</target>
+      </trans-unit>
+      <trans-unit id="UQa7cSe" resname="UpdatePass">
+        <source>UpdatePass</source>
+        <target>Modifier mot de passe</target>
+      </trans-unit>
+      <trans-unit id="peACh6F" resname="DetailUser">
+        <source>DetailUser</source>
+        <target>Détails de l'utilisateur</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

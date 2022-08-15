@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}DetailUser{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="breadcrumbbar">
+        <div class="row align-items-center">
+            <div class="col-md-8 col-lg-8">
+                <h4 class="page-title">{% trans %}DetailUser{% endtrans %}</h4>
+                <div class="breadcrumb-list">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ path('app_document_index') }}">{% trans %}Home{% endtrans %}</a>
+                        </li>
+                        <li class="breadcrumb-item"><a
+                                    href="{{ path('app_user_index') }}">{% trans %}ManageUser{% endtrans %}</a></li>
+                        <li class="breadcrumb-item active"><a href="#">{% trans %}DetailUser{% endtrans %}</a></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="widgetbar">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contentbar">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card m-b-30">
+                    <div class="card-header">
+                        <h5 class="card-title">
+                            <a href="{{ path('app_user_index') }}" class="btn btn-info"><i
+                                        class="ti-back-left mr-2"></i>{% trans %}GoBack{% endtrans %}</a>
+                            <a class="btn btn-warning" href="{{ path('app_user_edit', {'id': user.id}) }}"> <i
+                                        class="ti-pencil mr-2"></i> {% trans %}Update{% endtrans %}</a>
+                        </h5>
+                    </div>
+                    <div class="card-body">
+
+                        <table class="table table-secondary">
+                            <tbody>
+                            <tr>
+                                <th>{% trans %}Email{% endtrans %}</th>
+                                <td>{{ user.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>{% trans %}Roles{% endtrans %}</th>
+                                <td><span class="badge badge-dark">{{ user.roles ? user.roles|json_encode : '' }}</span></td>
+                            </tr>
+                            <tr>
+                                <th>{% trans %}Nom{% endtrans %}</th>
+                                <td>{{ user.nom }}</td>
+                            </tr>
+                            <tr>
+                                <th>{% trans %}Prenom{% endtrans %}</th>
+                                <td>{{ user.prenom }}</td>
+                            </tr>
+                            <tr>
+                                <th>{% trans %}Phone{% endtrans %}</th>
+                                <td>{{ user.phone }}</td>
+                            </tr>
+                            <tr>
+                                <th>{% trans %}CreatedAt{% endtrans %}</th>
+                                <td>{{ user.createdAt ? user.createdAt|format_datetime() : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>{% trans %}UpdatedAt{% endtrans %}</th>
+                                <td>{{ user.updatedAt ? user.updatedAt|format_datetime() : '' }}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
